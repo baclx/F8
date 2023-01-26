@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course F8</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const courses = [
+            {
+                id: 13,
+                title: "Xây Dựng Website với ReactJS",
+                slug: "reactjs",
+                description:
+                    "Khóa học ReactJS từ cơ bản tới nâng cao, kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS. Cuối khóa học này bạn sẽ sở hữu một dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ trong khóa học này.",
+                image: "courses/13/13.png",
+                icon: "courses/13/6200af9262b30.png",
+                video_type: "youtube",
+                video: "x0fSBAgBrOQ",
+                old_price: 0,
+                price: 0,
+                pre_order_price: 0,
+                students_count: 37212,
+                is_pro: false,
+                is_selling: false,
+                published_at: "2020-02-10T14:23:13.000000Z",
+                is_registered: true,
+                user_progress: 29,
+                last_completed_at: "2022-03-03 16:06:15",
+                image_url: "https://files.fullstack.edu.vn/f8-prod/courses/13/13.png",
+                icon_url:
+                    "https://files.fullstack.edu.vn/f8-prod/courses/13/6200af9262b30.png",
+                video_url: "https://www.youtube.com/watch?v=x0fSBAgBrOQ",
+                is_coming_soon: false,
+                is_pre_order: false,
+                is_published: true,
+            },
+            {
+                id: 2,
+                title: "HTML, CSS từ Zero đến Hero",
+                slug: "html-css",
+                description:
+                    "Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.",
+                image: "courses/2.png",
+                icon: "courses/2/6200aecea81de.png",
+                video_type: "youtube",
+                video: "R6plN3FvzFY",
+                old_price: 0,
+                price: 0,
+                pre_order_price: 0,
+                students_count: 194459,
+                is_pro: false,
+                is_selling: false,
+                published_at: "2020-02-10T14:23:13.000000Z",
+                is_registered: true,
+                user_progress: 99,
+                last_completed_at: "2022-02-17 07:20:47",
+                image_url: "https://files.fullstack.edu.vn/f8-prod/courses/2.png",
+                icon_url:
+                    "https://files.fullstack.edu.vn/f8-prod/courses/2/6200aecea81de.png",
+                video_url: "https://www.youtube.com/watch?v=R6plN3FvzFY",
+                is_coming_soon: false,
+                is_pre_order: false,
+                is_published: true,
+            },
+            {
+                id: 3,
+                title: "Responsive Với Grid System",
+                slug: "responsive-web-design",
+                description:
+                    "Trong khóa này chúng ta sẽ học về cách xây dựng giao diện web responsive với Grid System, tương tự Bootstrap 4.",
+                image: "courses/3.png",
+                icon: "courses/3/6200afe1240bb.png",
+                video_type: "youtube",
+                video: "uz5LIP85J5Y",
+                old_price: 0,
+                price: 0,
+                pre_order_price: 0,
+                students_count: 25407,
+                is_pro: false,
+                is_selling: false,
+                published_at: "2020-02-10T14:23:13.000000Z",
+                is_registered: true,
+                user_progress: 100,
+                last_completed_at: "2022-02-27 07:55:41",
+                image_url: "https://files.fullstack.edu.vn/f8-prod/courses/3.png",
+                icon_url:
+                    "https://files.fullstack.edu.vn/f8-prod/courses/3/6200afe1240bb.png",
+                video_url: "https://www.youtube.com/watch?v=uz5LIP85J5Y",
+                is_coming_soon: false,
+                is_pre_order: false,
+                is_published: true,
+            },
+            {
+                id: 1,
+                title: "Lập Trình JavaScript Cơ Bản",
+                slug: "javascript-co-ban",
+                description:
+                    "Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học.",
+                image: "courses/1.png",
+                icon: "courses/1/6200ad9d8a2d8.png",
+                video_type: "youtube",
+                video: "0SJE9dYdpps",
+                old_price: 0,
+                price: 0,
+                pre_order_price: 0,
+                students_count: 122585,
+                is_pro: false,
+                is_selling: false,
+                published_at: "2020-02-10T14:23:13.000000Z",
+                is_registered: true,
+                user_progress: 88,
+                last_completed_at: "2022-03-01 15:45:47",
+                image_url: "https://files.fullstack.edu.vn/f8-prod/courses/1.png",
+                icon_url:
+                    "https://files.fullstack.edu.vn/f8-prod/courses/1/6200ad9d8a2d8.png",
+                video_url: "https://www.youtube.com/watch?v=0SJE9dYdpps",
+                is_coming_soon: false,
+                is_pre_order: false,
+                is_published: true,
+            },
+        ];
+
+        // UI component
+        function Course({ course, onClick }) {
+            return (
+                <div>
+                    <h2 onClick={() => onClick(course)}>{course.title}</h2>    
+                    <img src={course.image_url}/>
+                    <p>{course.description}</p>
+                    <p>{course.students_count}</p>
+                </div>
+            )
+        }
+
+        // container
+        function App() {
+
+            //useCallback
+            const handleClick = (course) => {
+                alert(course.title)
+            }
+
+            return (
+                <div id="wrap">
+                    {courses.map((course) => {
+                        return (
+                            <Course 
+                                key={course.id}
+                                course={course}
+                                onClick={handleClick}
+                            />
+                        )
+                    })}
+                </div>
+            )
+        }
+
+        ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+</body>
+
+</html>

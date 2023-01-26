@@ -1,0 +1,76 @@
+/* Responsive */
+
+/* Break Point: la diem chuyen doi. vd tu pc sang tablet */
+
+/* PC */
+@media (min-width: 1024px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .s-full-width,
+    .s-col-full {
+        width: 100%;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    #nav .subnav {
+        position: initial;
+        background: #333;
+    }
+    
+    #nav .subnav a {
+      color: #fff;
+      padding: 5px 41px;
+    }
+
+    #nav li a {
+        padding: 1px 24px;
+    }
+
+    #nav > li {
+        display: block;
+    }
+    
+    #nav > li:first-child {
+        display: inline-block;
+    }
+
+    #header {
+        overflow: hidden;
+    }
+    
+    #header .search-btn {
+        display: none;
+    }
+
+    #header .mobile-menu-btn {
+        display: block;
+    }
+
+    #content .member-avatar {
+        width: 60%;
+        margin-bottom: 16px;
+    }
+
+    #contact .contact-form {
+        margin-top: 16px;
+    }
+
+    #contact .s-mt-8 {
+        margin-top: 8px;
+    }
+}

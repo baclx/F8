@@ -1,0 +1,14 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "kien thuc",
+      "description": "kien thuc co ban"
+    },
+    {
+      "name": "kien thuc 2",
+      "description": "kien thuc co ban 2",
+      "id": 3
+    }
+  ]
+}

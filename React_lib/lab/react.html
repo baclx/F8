@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Props render = map</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const items = [
+      {
+        url: "https://files.fullstack.edu.vn/f8-prod/blog_posts/1671/61b6368a3a089.jpg",
+        title: "Thời gian và Động lực",
+        desc: "Có lẽ cũng rất lâu rồi mà tôi chưa đụng đến thứ được gọi là ",
+        published: "3 tháng trước·6 phút đọc",
+      },
+    ];
+
+    // PostItem.js
+    function PostItem({ item }) {
+      return (
+        <div className="post-item">
+          <img src={item.url} alt={item.title} />
+          <h2 className="post-title">{item.title}</h2>
+          <p className="post-desc">{item.desc}</p>
+          <p className="post-published">{item.published}</p>
+        </div>
+      );
+    }
+
+    // App.js
+    function App() {
+      return (
+        <div id="wrap">
+          {items.map((item, index) => {
+            return (
+              <PostItem
+                key={index}
+                item={item}
+              />
+            )
+          })}
+        </div>
+      );
+    }
+
+    // index.js
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</body>
+
+</html>

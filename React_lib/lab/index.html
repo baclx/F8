@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello React</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+        1. React.createElement() -> React element
+        2. so sanh vs document.createElement() -> DOM element
+        3. thay doi: id, className, style, ...
+        4. them: text, HTML
+        5. tao:
+            <h1 title="Hello" class="heading">Hello guys!</h1> 
+        6. tao:
+            <ul>
+                <li>Javascript</li>
+                <li>ReactJS</li>
+            </ul>
+        7. tao:
+            <div class="post-item">
+                <h2 title="Hoc React tai F8">Hoc ReactJS</h2>
+                <p>Hoc ReactJS co ban toi nang cao tai F8</p>
+            </div>
+     -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // 5
+        // DOM
+        // const h1DOM = document.createElement('h1')
+        // h1DOM.title = 'Hello';
+        // h1DOM.class = 'heading';
+        // h1DOM.textContent = 'Hello guys!';
+
+        // document.body.appendChild(h1DOM)
+
+        // React - 5
+        // React.createElement(type, props, children)
+        //   const h1React = React.createElement(
+        //     "h1",
+        //     {
+        //       title: "Hello",
+        //       className: "heading",
+        //     },
+        //     "Hello guys!"
+        //   );
+
+        //   ReactDOM.render(h1React, root);
+
+        // console.log(ulReact)
+
+        //6 -------------------
+        // DOM
+        // const ulDOM = document.createElement('ul');
+
+        // const liDOM1 = document.createElement('li');
+        // liDOM1.textContent = 'Javascript'
+
+        // const liDOM2 = document.createElement('li');
+        // liDOM2.textContent = 'ReactJS'
+
+        // ulDOM.appendChild(liDOM1) // them li la con vao ul - appendChild
+        // ulDOM.appendChild(liDOM2)
+
+        // document.body.appendChild(ulDOM)
+
+        //   React - 6
+        const root = document.querySelector("#root");
+
+        const courses = [
+            {
+                name: 'HTML, CSS'
+            },
+            {
+                name: 'Javascript'
+            },
+            {
+                name: 'Responsive'
+            },
+        ];
+            
+          const ulReact = <ul> 
+                {courses.map((course, index) => 
+                    <li key={index}>{course.name}</li>
+                )}
+            </ul>
+            
+          ReactDOM.render(ulReact, root);
+
+        // 7.
+        //DOM
+        //   const divDOM = document.createElement("div");
+        //   divDOM.class = "post-item";
+
+        //   const h2DOM = document.createElement("h2");
+        //   h2DOM.title = "Hoc React tai F8";
+        //   h2DOM.textContent = "Hoc React tai F8";
+
+        //   const pDOM = document.createElement("p");
+        //   pDOM.textContent = "Hoc ReactJS co ban toi nang cao tai F8";
+
+        //   divDOM.appendChild(h2DOM);
+        //   divDOM.appendChild(pDOM);
+
+        //   document.body.appendChild(divDOM);
+
+        // React - 7
+        // const divReact = React.createElement(
+        //     "div",
+        //     {
+        //         className: "post-item",
+        //     },
+        //     React.createElement("h2", { title: "Hoc React tai F8" }, "Hoc ReactJS"),
+        //     React.createElement("p", null, "Hoc ReactJS co ban toi nang cao tai F8")
+        // );
+
+        // //   get root element
+        // const root = document.querySelector("#root");
+
+        // //   React-DOM -> render UI
+        // ReactDOM.render(divReact, root);
+    </script>
+</body>
+
+</html>
